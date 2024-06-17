@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的簡歷</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.5s ease;
+        }
+        .maincode {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.5s ease;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            transition: color 0.5s ease;
+        }
+        .profile-pic {
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            transition: transform 0.5s ease;
+        }
+        .contact-info, .education, .experience, .skills {
+            margin: 20px 0;
+        }
+        .contact-info p, .education p, .experience p, .skills p {
+            margin: 10px 0;
+            color: #555;
+            transition: color 0.5s ease;
+        }
+        .experience, .education {
+            display: flex;
+            flex-direction: column;
+        }
+        .experience-item, .education-item {
+            margin-bottom: 20px;
+        }
+        .experience-item h3, .education-item h3 {
+            margin: 0;
+        }
+        .experience-item p, .education-item p {
+            margin: 5px 0;
+            color: #777;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .button, .details-button {
+            background: #6c63ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+        .button:hover, .details-button:hover {
+            background: #5752d0;
+        }
+        .hidden-content {
+            display: none;
+        }
+        .hidden-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+        .skills-list li {
+            margin: 10px 0;
+            color: #555;
+        }
+        .skill-bar {
+            width: 100%;
+            background: #e4e4e4;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+        .skill-level {
+            height: 10px;
+            background: #6c63ff;
+            border-radius: 5px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="maincode">
+        <h1>我的簡歷</h1>
+        <img src="./images/dog.jpg" alt="Profile Picture" class="profile-pic">
+        <div class="contact-info">
+            <h2>聯絡資訊</h2>
+            <p>電話: 123-456-7890</p>
+            <p>電子郵件: example@example.com</p>
+            <p>地址: 台北市某某區某某路123號</p>
+        </div>
+        <div class="education">
+            <h2>教育背景</h2>
+            <div class="education-item">
+                <h3>某某大學 - 計算機科學 (2015-2019)</h3>
+                <button class="details-button" onclick="toggleContent('education-details')">More Details</button>
+                <div id="education-details" class="hidden-content">
+                    <p>主修課程: 資料結構, 演算法, 資料庫系統</p>
+                    <p>GPA: 3.8/4.0</p>
+                    <p>相關專案: 網站開發、資料分析系統設計</p>
+                </div>
+            </div>
+        </div>
+        <div class="experience">
+            <h2>工作經歷</h2>
+            <div class="experience-item">
+                <h3>某某公司 - 軟體工程師 (2020-至今)</h3>
+                <button class="details-button" onclick="toggleContent('experience-details')">More Details</button>
+                <div id="experience-details" class="hidden-content">
+                    <p>負責開發和維護Web應用程序，參與設計和代碼審查。</p>
+                    <p>使用技術: JavaScript, React, Node.js</p>
+                    <p>項目: 電子商務網站開發，內部管理系統</p>
+                </div>
+            </div>
+        </div>
+        <div class="skills">
+            <h2>技能</h2>
+            <button class="details-button" onclick="toggleContent('skills-details')">More Details</button>
+            <div id="skills-details" class="hidden-content">
+                <ul class="skills-list">
+                    <li>
+                        HTML/CSS
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        JavaScript
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Python
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        React
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Node.js
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 70%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        SQL
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 65%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Git
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Java
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%;"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="button-container">
+            <button id="getback" class="button">返回</button>
+        </div>
+    </div>
+    <script>
+        var getback = document.getElementById('getback');
+        getback.onclick = () => {
+            history.go(-1);
+        }
+
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            content.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
